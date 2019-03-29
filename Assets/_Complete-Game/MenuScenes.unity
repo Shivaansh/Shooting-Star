@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -654,12 +654,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 675345732}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 675345733}
+        m_MethodName: NextLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -783,7 +783,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 675345734}
+      - m_Target: {fileID: 675345733}
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -842,7 +842,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 675345735}
-  - component: {fileID: 675345734}
   - component: {fileID: 675345733}
   m_Layer: 0
   m_Name: GameObject
@@ -860,19 +859,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 675345732}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0730d2b1f01e4014fa18cb9c769c7caa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &675345734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 675345732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0730d2b1f01e4014fa18cb9c769c7caa, type: 3}
+  m_Script: {fileID: 11500000, guid: e58e09da851b27645953a7a1b3aaeb78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &675345735

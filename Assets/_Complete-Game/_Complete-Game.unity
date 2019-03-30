@@ -1782,7 +1782,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 46238fb1ad7a7a84ba8954c1c860994c, type: 3}
-    m_FontSize: 25
+    m_FontSize: 21
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1793,9 +1793,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "1. click mouse to shoot\n2. press key esc to pause game\n3.press key I
+  m_Text: "1. click mouse to shoot\n2. press key esc to pause game\n3.press key H
     to see instrunctions\n4. press wasd to move character\n5. use mouse to change
-    the \n     shooting direction"
+    the \n     shooting direction\n6. press space to use livesaver\n7. press key i
+    to open inventory\n    page"
 --- !u!222 &596530479
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4450,7 +4451,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1927300171}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}

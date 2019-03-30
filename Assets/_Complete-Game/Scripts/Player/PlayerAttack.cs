@@ -3,12 +3,13 @@ using UnitySampleAssets.CrossPlatformInput;
 
 namespace CompleteProject
 {
-    public class PlayerShooting : MonoBehaviour
+    public class PlayerAttack : MonoBehaviour
     {
-        public int damagePerShot = 20;                  // The damage inflicted by each bullet.
-        public float timeBetweenBullets = 0.15f;        // The time between each shot.
-        public float range = 100f;                      // The distance the gun can fire.
-
+        [SerializeField] int damagePerShot = 20;                  // The damage inflicted by each bullet.
+        [SerializeField] float timeBetweenBullets = 0.15f;        // The time between each shot.
+        [SerializeField] float range = 100f;                      // The distance the gun can fire.
+        [SerializeField] int lsCost = 10;  //the cost of the lifesaver function
+        private bool lifeSaverAvailable = true;
 
         float timer;                                    // A timer to determine when to fire.
         Ray shootRay = new Ray();                       // A ray from the gun end forwards.
@@ -20,10 +21,11 @@ namespace CompleteProject
         Light gunLight;                                 // Reference to the light component.
 		public Light faceLight;								// Duh
         float effectsDisplayTime = 0.2f;                // The proportion of the timeBetweenBullets that the effects will display for.
-
+        ScoreManager scoreScript;
 
         void Awake ()
         {
+            scoreScript  = GameObject.FindObjectOfType<ScoreManager>();
             // Create a layer mask for the Shootable layer.
             shootableMask = LayerMask.GetMask ("Shootable");
 
@@ -40,10 +42,10 @@ namespace CompleteProject
         {
             // Add the time since Update was last called to the timer.
             timer += Time.deltaTime;
-
+            LifeSaverFunction();
 #if !MOBILE_INPUT
             // If the Fire1 button is being press and it's time to fire...
-			if(Input.GetButton ("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0)
+            if (Input.GetButton ("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0)
             {
                 // ... shoot the gun.
                 Shoot ();
@@ -119,6 +121,26 @@ namespace CompleteProject
             {
                 // ... set the second position of the line renderer to the fullest extent of the gun's range.
                 gunLine.SetPosition (1, shootRay.origin + shootRay.direction * range);
+            }
+        }
+
+        void LifeSaverFunction()
+        {
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                Debug.Log("Life Saver available? " + lifeSaverAvailable);
+                Debug.Log(scoreScript.getScore());
+                if (scoreScript.getScore() >= lsCost && lifeSaverAvailable == true)
+                {
+                    lifeSaverAvailable = false;
+                    scoreScript.setScore(scoreScript.getScore() - lsCost);
+                    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+                    for (int i = 0; i < enemies.Length; i++)
+                    {
+                        //enemies[i].GetComponent<Animator>().SetTrigger("Dead");
+                        Destroy(enemies[i], 0.5f);
+                    }
+                }
             }
         }
     }

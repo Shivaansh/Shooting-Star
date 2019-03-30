@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 using UnityEditor;
 #endif
 
-public class InventoryManager : MonoBehaviour
+public class InventoryController : MonoBehaviour
 {
 
     public AudioMixerSnapshot paused;

@@ -5,5 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/_CompletedAssets/Scenes/Level 01 5.x.unity
+    path: Assets/_Complete-Game/DifficultyPage.unity
+    guid: d41f3ff435c2a184da50b48925e23638
+  - enabled: 1
+    path: Assets/_Complete-Game/_Complete-Game.unity
+    guid: 874e24e631d7345b0a29cc297bedb405
+  - enabled: 1
+    path: Assets/_Complete-Game/MenuScenes.unity
+    guid: 57d4b8e4e70d9804a96d96dd71160e21
+  m_configObjects: {}

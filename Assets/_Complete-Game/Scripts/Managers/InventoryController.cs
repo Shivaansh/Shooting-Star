@@ -1,25 +1,50 @@
-﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.UI;
+﻿using UnityEditor;
+using UnityEngine;
 using UnityEngine.Audio;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 
-public class InventoryController : MonoBehaviour
+namespace CompleteProject
 {
-    Canvas canvas;
+    public class InventoryController : MonoBehaviour
 
-    void Start()
     {
-        canvas = GetComponent<Canvas>();
-    }
+        public AudioMixerSnapshot paused;
+        public AudioMixerSnapshot unpaused;
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.N))
+        Canvas canvas;
+
+        void Start()
         {
-            canvas.enabled = !canvas.enabled;
+            canvas = GetComponent<Canvas>();
+        }
+
+        void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.N))
+            {
+                canvas.enabled = !canvas.enabled;
+                Pause();
+            }
+        }
+
+        public void Pause()
+        {
+            Time.timeScale = Time.timeScale == 0 ? 1 : 0;
+            Lowpass();
+
+        }
+
+        void Lowpass()
+        {
+            if (Time.timeScale == 0)
+            {
+                paused.TransitionTo(.01f);
+            }
+
+            else
+
+            {
+                unpaused.TransitionTo(.01f);
+            }
         }
     }
 }

@@ -71,7 +71,7 @@ namespace CompleteProject
         }
 
 
-        void Death ()
+        public void Death ()
         {
             // The enemy is dead.
             isDead = true;

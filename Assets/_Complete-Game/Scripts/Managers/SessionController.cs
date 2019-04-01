@@ -19,7 +19,7 @@ namespace CompleteProject
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.I))
+            if (Input.GetKeyDown(KeyCode.H))
             {
                 canvas.enabled = !canvas.enabled;
                 Pause();

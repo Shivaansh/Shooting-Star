@@ -9664,7 +9664,7 @@ GameObject:
   - component: {fileID: 11415352}
   m_Layer: 9
   m_Name: Hellephant
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9892,7 +9892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa10cc87aff30c04dbe0aa648f5b6adc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 1000
+  startingHealth: 3000
   currentHealth: 0
   sinkSpeed: 2.5
   scoreValue: 50

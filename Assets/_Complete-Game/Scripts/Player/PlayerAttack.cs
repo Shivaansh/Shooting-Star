@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnitySampleAssets.CrossPlatformInput;
 
 namespace CompleteProject
@@ -11,6 +12,7 @@ namespace CompleteProject
         [SerializeField] int lsCost = 10;  //the cost of the lifesaver function
         private bool lifeSaverAvailable = true;
 
+
         float timer;                                    // A timer to determine when to fire.
         Ray shootRay = new Ray();                       // A ray from the gun end forwards.
         RaycastHit shootHit;                            // A raycast hit to get information about what was hit.
@@ -22,6 +24,8 @@ namespace CompleteProject
 		public Light faceLight;								// Duh
         float effectsDisplayTime = 0.2f;                // The proportion of the timeBetweenBullets that the effects will display for.
         ScoreManager scoreScript;
+        [SerializeField] Text lsText;
+        
 
         void Awake ()
         {
@@ -40,6 +44,15 @@ namespace CompleteProject
 
         void Update ()
         {
+
+            if(scoreScript.getScore() >= lsCost && lifeSaverAvailable == true)
+            {
+                lsText.color = Color.yellow;
+            }
+            else
+            {
+                lsText.color = Color.gray;
+            }
             // Add the time since Update was last called to the timer.
             timer += Time.deltaTime;
             LifeSaverFunction();
@@ -133,6 +146,7 @@ namespace CompleteProject
                 if (scoreScript.getScore() >= lsCost && lifeSaverAvailable == true)
                 {
                     lifeSaverAvailable = false;
+                    Destroy(lsText);
                     scoreScript.setScore(scoreScript.getScore() - lsCost);
                     GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
                     for (int i = 0; i < enemies.Length; i++)

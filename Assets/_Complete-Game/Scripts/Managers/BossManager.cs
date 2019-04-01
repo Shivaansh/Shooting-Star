@@ -12,8 +12,8 @@ namespace CompleteProject
         [SerializeField] int bossTriggerScore = 500;
         int numberOfBosses = 1;
 
-        [SerializeField] Transform room1Fab; //the prefab for the 1st room choice object
-        [SerializeField] Transform room2Fab; //the prefab for the 2nd room choice object
+        [SerializeField] GameObject room1Fab; //the prefab for the 1st room choice object
+        [SerializeField] GameObject room2Fab; //the prefab for the 2nd room choice object
         [SerializeField] Transform room1Point;  //the transform for the 1st room choice object
         [SerializeField] Transform room2Point; //the transform for the 1st room choice object
 

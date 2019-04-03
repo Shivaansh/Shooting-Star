@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Complete-Game/_Complete-Game.unity
     guid: 874e24e631d7345b0a29cc297bedb405
+  - enabled: 1
+    path: Assets/_Complete-Game/Room1.unity
+    guid: 8b45b48210d0eb74d8f9ad2792ecfc84
+  - enabled: 1
+    path: Assets/_Complete-Game/Room2.unity
+    guid: eef639f76930bf248841eb7d6cfef00b
   m_configObjects: {}

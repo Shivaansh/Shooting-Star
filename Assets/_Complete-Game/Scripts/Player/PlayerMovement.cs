@@ -6,8 +6,8 @@ namespace CompleteProject
     public class PlayerMovement : MonoBehaviour
     {
         public float speed = 6f;            // The speed that the player will move at.
-
-
+        private Interactable ItemtoPickUp = null;
+        Camera cam;
         Vector3 movement;                   // The vector to store the direction of the player's movement.
         Animator anim;                      // Reference to the animator component.
         Rigidbody playerRigidbody;          // Reference to the player's rigidbody.
@@ -22,7 +22,6 @@ namespace CompleteProject
             // Create a layer mask for the floor layer.
             floorMask = LayerMask.GetMask ("Floor");
 #endif
-
             // Set up references.
             anim = GetComponent <Animator> ();
             playerRigidbody = GetComponent <Rigidbody> ();
@@ -34,7 +33,12 @@ namespace CompleteProject
             // Store the input axes.
             float h = CrossPlatformInputManager.GetAxisRaw("Horizontal");
             float v = CrossPlatformInputManager.GetAxisRaw("Vertical");
-
+            //New code Starts !!!!!!!!!!!!!!!!!!!!
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                ItemtoPickUp.Interact();
+            }
+            //New Code ends !!!!!!!!!!!!!!!!!!
             // Move the player around the scene.
             Move (h, v);
 
@@ -43,6 +47,7 @@ namespace CompleteProject
 
             // Animate the player.
             Animating (h, v);
+
         }
 
 
@@ -112,6 +117,28 @@ namespace CompleteProject
 
             // Tell the animator whether or not the player is walking.
             anim.SetBool ("IsWalking", walking);
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            Debug.Log("enter");
+            Interactable item = other.GetComponent<Interactable>();
+            if (item != null)
+            {
+                ItemtoPickUp = item;
+                Debug.Log("get");
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            Debug.Log("exit");
+            Interactable item = other.GetComponent<Interactable>();
+            if (item != null)
+            {
+                ItemtoPickUp = null;
+                Debug.Log("release");
+            }
         }
     }
 }

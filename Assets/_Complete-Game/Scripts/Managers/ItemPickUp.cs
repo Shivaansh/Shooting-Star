@@ -29,8 +29,8 @@ public class ItemPickUp : MonoBehaviour
            
             Inventory.Add(this);
             Debug.Log(Inventory.items.Count);
-            Destroy(GameObject.Find(Name));
-       
+            //Destroy(GameObject.Find(Name));
+            Destroy(this.gameObject);
         }
 
        // }

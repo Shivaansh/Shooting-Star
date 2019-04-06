@@ -1287,7 +1287,6 @@ GameObject:
   - component: {fileID: 326707686}
   - component: {fileID: 326707685}
   - component: {fileID: 326707684}
-  - component: {fileID: 326707690}
   - component: {fileID: 326707691}
   m_Layer: 5
   m_Name: InventoryController
@@ -1393,18 +1392,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &326707690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 326707683}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c6df449d5b71824ba9a704cfdc9f8c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &326707691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4812,6 +4799,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paused: {fileID: 0}
   unpaused: {fileID: 0}
+  pauseState: 0
+  p: {fileID: 0}
+  inv: {fileID: 0}
 --- !u!114 &1730467245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4861,7 +4851,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1730467243}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -5415,8 +5405,8 @@ GameObject:
   - component: {fileID: 1927300177}
   - component: {fileID: 1927300176}
   - component: {fileID: 1927300175}
-  - component: {fileID: 1927300173}
   - component: {fileID: 1927300172}
+  - component: {fileID: 1927300173}
   m_Layer: 5
   m_Name: InstructionsCanvas
   m_TagString: Untagged
@@ -5438,6 +5428,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paused: {fileID: 0}
   unpaused: {fileID: 0}
+  pauseState: 0
+  p: {fileID: 244922611}
+  inv: {fileID: 326707684}
 --- !u!114 &1927300173
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -32,7 +32,7 @@ public class RoomChoicesController : MonoBehaviour
     {
         Time.timeScale = Time.timeScale == 0 ? 1 : 0;
         Lowpass();
-
+  
     }
 
     void Lowpass()

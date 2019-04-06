@@ -17,34 +17,15 @@ namespace CompleteProject
             canvas = GetComponent<Canvas>();
         }
 
-        void Update()
+        public void changeVisibility()
         {
-            if (Input.GetKeyDown(KeyCode.I))
-            {
-                canvas.enabled = !canvas.enabled;
-                Pause();
-            }
+            canvas.enabled = !canvas.enabled;
         }
 
-        public void Pause()
+        public bool isShown()
         {
-            Time.timeScale = Time.timeScale == 0 ? 1 : 0;
-            Lowpass();
-
+            return canvas.enabled;
         }
 
-        void Lowpass()
-        {
-            if (Time.timeScale == 0)
-            {
-                paused.TransitionTo(.01f);
-            }
-
-            else
-
-            {
-                unpaused.TransitionTo(.01f);
-            }
-        }
     }
 }

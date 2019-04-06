@@ -12,11 +12,9 @@ namespace CompleteProject
         [SerializeField] int bossTriggerScore = 20;
         int numberOfBosses = 1;
 
-        [SerializeField] GameObject room1Fab; //the prefab for the 1st room choice object
-        [SerializeField] GameObject room2Fab; //the prefab for the 2nd room choice object
+
         [SerializeField] GameObject roomCentreFab; //the prefab for the room centre object
-        [SerializeField] Transform room1Point;  //the transform for the 1st room choice object
-        [SerializeField] Transform room2Point; //the transform for the 1st room choice object
+ 
         [SerializeField] Transform roomCentrePoint; //the transform for the room centre object
 
 
@@ -51,8 +49,6 @@ namespace CompleteProject
             Instantiate(bossFab, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
 
             //Create instances of roomChoice prefabs and spawn at the chosen location
-            Instantiate(room1Fab, room1Point.position, room1Point.rotation);
-            Instantiate(room2Fab, room2Point.position, room2Point.rotation);
             Instantiate(roomCentreFab, roomCentrePoint.position, roomCentrePoint.rotation);
         }
     }

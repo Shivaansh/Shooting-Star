@@ -8,7 +8,7 @@ namespace CompleteProject
         public GameObject enemy;                // The enemy prefab to be spawned.
         public float spawnTime = 3f;            // How long between each spawn.
         public Transform[] spawnPoints;         // An array of the spawn points this enemy can spawn from.
-
+        public int count = 25;
 
         void Start ()
         {
@@ -20,7 +20,7 @@ namespace CompleteProject
         void Spawn ()
         {
             // If the player has no health left...
-            if(playerHealth.currentHealth <= 0f)
+            if(playerHealth.currentHealth <= 0f || count <= 0)
             {
                 // ... exit the function.
                 return;
@@ -31,6 +31,7 @@ namespace CompleteProject
 
             // Create an instance of the enemy prefab at the randomly selected spawn point's position and rotation.
             Instantiate (enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+            count--;
         }
     }
 }

@@ -18,9 +18,9 @@ EditorBuildSettings:
     path: Assets/_Complete-Game/_Complete-Game.unity
     guid: 874e24e631d7345b0a29cc297bedb405
   - enabled: 1
-    path: Assets/_Complete-Game/Room1Draft.unity
+    path: Assets/_Complete-Game/Room1.unity
     guid: 29d19aff766bf2546b6efd85d706db73
   - enabled: 1
-    path: Assets/_Complete-Game/Room2Draft.unity
+    path: Assets/_Complete-Game/Room2.unity
     guid: ee89c1495d0c97842bdb67909087a53b
   m_configObjects: {}

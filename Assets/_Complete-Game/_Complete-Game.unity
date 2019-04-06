@@ -200,13 +200,7 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 933997770}
   bossTriggerScore: 50
-  room1Fab: {fileID: 5024444693458705236, guid: f003dec424e36784899ad8d3f2db29a2,
-    type: 3}
-  room2Fab: {fileID: 5024444693458705236, guid: f003dec424e36784899ad8d3f2db29a2,
-    type: 3}
   roomCentreFab: {fileID: 6125895924499517303}
-  room1Point: {fileID: 174006614}
-  room2Point: {fileID: 1035735804}
   roomCentrePoint: {fileID: 1659461752}
 --- !u!1 &28357257
 GameObject:
@@ -1411,18 +1405,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c6df449d5b71824ba9a704cfdc9f8c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
 --- !u!114 &326707691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5951,9 +5933,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Room 1 has...
+  m_Text: 'Room 1: Defeat the evil king''s army
 
-    Room 2 has...
+    Room 2: Overthrow the evil king itself
 
     Which will you choose?'
 --- !u!222 &1998646358

@@ -43,6 +43,7 @@ namespace CompleteProject
                 else if(canvas.enabled == false)
                 {
                     pauseState += 1;
+                    Debug.Log("instruction panel toggle");
                     canvas.enabled = !canvas.enabled;
                 }
                 else if(canvas.enabled == true)
@@ -76,6 +77,7 @@ namespace CompleteProject
                 {
                     pauseState -= 1;
                     p.changeVisibility();
+                    Debug.Log("pause panel toggle");
                 }
                 
             }
@@ -98,6 +100,7 @@ namespace CompleteProject
                 {
                     pauseState += 1;
                     inv.changeVisibility();
+                    Debug.Log("inventory panel toggle");
                 }
                 else if (inv.isShown() == true)
                 {
